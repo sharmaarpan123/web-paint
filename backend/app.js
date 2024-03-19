@@ -21,6 +21,8 @@ const init = async () => {
   await mongoInit();
 
   app.use("/auth", AuthRouter);
+  app.get("/", (req, res) => res.send("server is running"));
+  app.get("/healthy", (req, res) => res.send("server is healthy"));
   app.use("/user", tokenVerificationMiddleWare, userRouter);
 
   app.listen(process.env.PORT, () => {
