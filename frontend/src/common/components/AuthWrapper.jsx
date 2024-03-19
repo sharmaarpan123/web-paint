@@ -10,6 +10,7 @@ const AuthWrapper = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const [user, setUser] = useState(null);
+  
 
   const fetchUser = async () => {
     try {
