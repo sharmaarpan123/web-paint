@@ -3,7 +3,7 @@ import Loader from "@/common/components/Loader";
 import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const DeleteModal = ({ toBeDeletedId, setDeleteProductModal, reFetch }) => {
