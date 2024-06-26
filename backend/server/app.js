@@ -1,13 +1,13 @@
 import express from "express";
 import path from "path";
 import logger from "morgan";
-import userRouter from "./routes/user.js";
-import AuthRouter from "./routes/auth.js";
-import mongoInit from "./models/index.js";
-import tokenVerificationMiddleWare from "./utils/tokenVerificationMiddleWare.js";
+import userRouter from "../routes/user.js";
+import AuthRouter from "../routes/auth.js";
+import mongoInit from "../models/index.js";
+import tokenVerificationMiddleWare from "../utils/tokenVerificationMiddleWare.js";
 import { config } from "dotenv";
 import cors from "cors";
-import user from "./models/user/user.js";
+import user from "../models/user/user.js";
 
 const init = async () => {
   config();
@@ -25,8 +25,8 @@ const init = async () => {
   app.get("/healthy", (req, res) => res.send("server is healthy"));
   app.use("/user", tokenVerificationMiddleWare, userRouter);
 
-  app.listen(process.env.PORT, () => {
-    console.log("server start on " + process.env.PORT + " port");
+  app.listen(8000, () => {
+    console.log("server start on " + 8000 + " port");
   });
 };
 
